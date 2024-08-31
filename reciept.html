@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+</head>
+
+<body>
+  <script src='script.js'></script>
+  <br>
+  <br>
+  <h1 id='title'>Thank you for your order at NoahPlex!</h1>
+  <div class='container-fluid'>
+    <div class='row'>
+      <div class='col-lg-12 col-md-12'>
+        <div class="jumbotron" class='mt-4 p-5 bg-primary text-white rounded'
+          style='border:1px solid black; border-radius:3px;margin-top:30px;'>
+          <table class="table table-bordered" style="margin-bottom:0;">
+            <thead>
+              <tr>
+                <th scope="col">Tickets<span id="when"></span></th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Child (age 0-14)</th>
+                <td id="quantity-c"></td>
+                <td id="price-c"></td>
+              </tr>
+              <tr>
+                <th scope="row">Adult (age 15-64)</th>
+                <td id="quantity-a"></td>
+                <td id="price-a"></td>
+              </tr>
+              <tr>
+                <th scope="row">Senior (age 65+)</th>
+                <td id="quantity-s"></td>
+                <td id="price-s"></td>
+              </tr>
+            </tbody>
+          </table>
+          <table class="table table-bordered" style="margin-top:0;">
+            <thead>
+            </thead>
+            <tbody>
+              <tr>
+                <td><b>Movie</b></td>
+                <td id="movie"></td>
+              </tr>
+              <tr>
+                <td><b>Time</b></td>
+                <td id="time"></td>
+              </tr>
+              <tr>
+                <td><b>Sub-Total</b></td>
+                <td id="sub"></td>
+              </tr>
+              <tr>
+                <td><b>Tuesday Discount</b></td>
+                <td id="disc"></td>
+              </tr>
+              <tr>
+                <td><b>Tax</b></td>
+                <td id="tax"></td>
+              </tr>
+              <tr>
+                <td><b>TOTAL</b></td>
+                <td id="total"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    let data = calcPrice()
+    let time = sessionStorage.getItem("time")
+    document.getElementById("movie").innerHTML = sessionStorage.getItem("movie")
+    if (time.charAt(time.length - 1) == "m") {
+      document.getElementById("time").innerHTML = (sessionStorage.getItem("time")).slice(0, -2);
+    }
+    else {
+      document.getElementById("time").innerHTML =  sessionStorage.getItem("time")
+    }
+    document.getElementById("when").innerHTML = " (" + sessionStorage.getItem("when") + ")"
+    document.getElementById("quantity-c").innerHTML = sessionStorage.getItem("ticketC")
+    document.getElementById("price-c").innerHTML = data["child"]
+    document.getElementById("quantity-a").innerHTML = sessionStorage.getItem("ticketA")
+    document.getElementById("price-a").innerHTML = data["adult"]
+    document.getElementById("quantity-s").innerHTML = sessionStorage.getItem("ticketS")
+    document.getElementById("price-s").innerHTML = data["senior"]
+    document.getElementById("sub").innerHTML = data["subtotal"]
+    if (data["Tuesday"] == "N/A") {
+      document.getElementById("disc").innerHTML = data["Tuesday"]
+    }
+    else {
+      document.getElementById("disc").innerHTML = data["price"] + " (" + data["subtotal"] + " - " + "$" + (data["Tuesday"]).toFixed(2) + ")"
+    }
+    document.getElementById("tax").innerHTML = data["tax"]
+    document.getElementById("total").innerHTML = data["priceWithTax"]
+  </script>
+  <button onclick='window.location.href = "index.html"' class='btn btn-danger' id='top' style="display:block;">Home</button>
+  <button onclick='print()' class='btn btn-primary' id='top' style="margin-top:10px;">Print</button>
+  <center>
+    <div id='navbar'>
+      <h4 style='color:white;margin-top:15px;'>NoahPlex: Introducing superhero week!</h4>
+  </center>
+  </div>
+</body>
+
+</html>

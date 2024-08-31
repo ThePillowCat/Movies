@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <script src='script.js'></script>
+  <br>
+  <br>
+  <div class='container-fluid'>
+    <div class='row'>
+      <div class='col-lg-6 col-md-6'>
+        <div class="jumbotron" class='mt-4 p-5 bg-primary text-white rounded'
+          style='border:1px solid black; border-radius:3px;margin-top:30px;'>
+          <h1>Spiderman</h1>
+          <img src="img/spiderman.jpg" class='img-responsive'></img>
+          <hr>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <p style="display:inline;">- (Rotton Tomatoes)</p>
+          <hr>
+          <p>With Spider-Man's identity now revealed, our friendly neighborhood web-slinger is unmasked and no longer
+            able to separate his normal life as Peter Parker from the high stakes of being a superhero. When Peter asks
+            for help from Doctor Strange, the stakes become even more dangerous, forcing him to discover what it truly
+            means to be Spider-Man.</p>
+        </div>
+      </div>
+      <div class='col-lg-6 col-md-6'>
+        <div class="jumbotron" class='mt-4 p-5 bg-primary text-white rounded'
+          style='border:1px solid black; border-radius:3px;margin-top:30px;'>
+          <h1>Order:</h1>
+          <label for="fname">First name:</label>
+          <input type="text" id="fname" name="fname"><br>
+          <label for="lname">Last name:</label>
+          <input type="text" id="lname" name="lname"><br>
+          </script>
+          <label for="cars">Choose A Time:</label>
+          <select name="days" id="days">
+            <optgroup label="Matinee Times"></optgroup>
+            <option value="3:30 p.m.-m">3:30 p.m.</option>
+            <option value="3:45 p.m.-m">3:45 p.m.</option>
+            <option value="4:00 p.m.-m">4:00 p.m.</option>
+            <optgroup label="Evening Times"></optgroup>
+            <option value="8:30 p.m.">8:30 p.m.</option>
+            <option value="8:45 p.m.">8:45 p.m.</option>
+            <option value="9:00 p.m.">9:00 p.m.</option>
+          </select>
+          <br>
+          <label for="cars">Choose A Day:</label>
+          <select name="week" id="week">
+            <option value="Monday">Monday
+            </option>
+            <option value="Tuesday">Tuesday
+            </option>
+            <option value="Wednesday">Wednesday
+            </option>
+            <option value="Thursday">Thursday
+            </option>
+            <option value="Friday">Friday
+            </option>
+            <option value="Saturday">Saturday
+            </option>
+            <option value="Sunday">Sunday
+            </option>
+          </select>
+          <br>
+          <label for="cars">Select the number of child (0-14) tickets:</label>
+          <input type="number" id="quantity1" name="quantity" min='0' max="1000" value="0"></input>
+          <br>
+          <label for="cars">Select the number of adult (15-64) tickets:</label>
+          <input type="number" id="quantity2" name="quantity" min='0' max="1000" value="0"></input>
+          <br>
+          <label for="cars">Select the number of senior (65+) tickets:</label>
+          <input type="number" id="quantity3" name="quantity" min='0' max="1000" value="0"></input>
+          <button onclick="process()" class="btn btn-success btn btn-primary" style="display:block;">Continue</button>
+           <hr>
+            <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Tickets</th>
+      <th scope="col">Time</th>
+      <th scope="col">Price</th>
+      <th scope="col">Time</th>
+      <th scope="col">Price</th>
+      <th scope="col">Time</th>
+      <th scope="col">Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Child (age 0-14)</th>
+      <td>Evening</td>
+      <td>$8.00</td>
+      <td>Matinee</td>
+      <td>$7.00</td>
+      <td>Tuesday</td>
+      <td class="text-primary">-10% OFF ORDER!!!</td>
+    </tr>
+    <tr>
+      <th scope="row">Adult (age 15-64)</th>
+      <td>Evening</td>
+      <td>$13.00</td>
+      <td>Matinee</td>
+      <td>$12.00</td>
+      <td>Tuesday</td>
+    </tr>
+    <tr>
+      <th scope="row">Senior (age 65+)</th>
+      <td>Evening</td>
+      <td>$8.00</td>
+      <td>Matinee</td>
+      <td>$7.00</td>
+      <td>Tuesday</td>
+    </tr>
+  </tbody>
+</table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button onclick='window.location.href = "index.html"' class='btn btn-danger' id='top'>Home</button>
+  <center>
+    <div id='navbar'>
+      <h4 style='color:white;margin-top:15px;'>NoahPlex: Introducing superhero week!</h4>
+  </center>
+  </div>
+</body>
+
+</html>

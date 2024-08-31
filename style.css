@@ -1,0 +1,56 @@
+.menu button {
+    display : block;
+}
+
+.menu button:hover {
+  font-weight: bold;
+}
+
+button {
+  display:block;
+  margin: 10px;
+}
+
+img {
+  width: auto;
+  width: 350px;
+}
+
+#title {
+  font-size:500%;
+  text-align: center;
+}
+
+* {
+  padding: 0;
+}
+
+#navbar {
+  display:block;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 50px;
+  margin-botton:20px;
+  background-color: black;
+}
+
+.checked {
+  color: orange;
+}
+h2 {
+  display: inline;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+#top {
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+}
